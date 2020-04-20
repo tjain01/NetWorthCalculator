@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--List of Assets will be shown using this activity-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AssetsTable"
+    android:background="@color/background" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ADD YOUR ASSETS"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:background="@color/componentsColor"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"/>
+
+
+
+            </RelativeLayout>
+
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_margin="10dp">-->
+
+            <!--            <Spinner-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:entries="@array/numbers"-->
+            <!--                android:backgroundTint="#fff"/>-->
+            <!--        </RelativeLayout>-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CASH AND INVESTMENTS"
+                android:textColor="@color/componentsColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_margin="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+                <CheckBox android:id="@+id/checkbox_chequing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Chequing"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="5dp"
+                    android:id="@+id/chequingAccountTV"/>
+
+                <EditText
+                    android:id="@+id/chequingAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/hintColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_savings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Savings and Taxes"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="5dp"
+                    android:id="@+id/savingsAndTaxesTV"
+                    />
+
+                <EditText
+                    android:id="@+id/savingsAndTaxesAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_rainydayFund"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:text="Rainy Day Fund"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/rainyDayFunTV"/>
+
+                <EditText
+                    android:id="@+id/rainyDayFund"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_travelSavings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Saving for travel"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/travelSavingsTv"/>
+
+                <EditText
+                    android:id="@+id/travelSavings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_pdSavings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Saving for PD"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/personalDevelopmentSavingsTV"/>
+
+                <EditText
+                    android:id="@+id/personalDevelopmentSavings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_investments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:text="Investments"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/investmentsTV"/>
+
+                <EditText
+                    android:id="@+id/investments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LONG TERM ASSETS"
+                android:textColor="@color/componentsColor"
+                android:layout_marginRight="2dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_margin="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_primeHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Primary Home"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/primaryHomeAmountTV"/>
+
+                <EditText
+                    android:id="@+id/primaryHomeAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox android:id="@+id/checkbox_secHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginRight="2dp"
+                    android:onClick="onAssetCheckboxClicked"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/componentsBackground"
+                    android:layout_weight="1"
+                    android:text="Secondary Home"
+                    android:layout_marginRight="2dp"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:id="@+id/secondaryHomeAmountTV"/>
+
+                <EditText
+                    android:id="@+id/secondaryHomeAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:background="@color/componentsBackground"
+                    android:textAlignment="center"
+                    android:textColorHint="@color/componentsColor"
+                    android:layout_weight="1"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/addLiabilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textSize="20sp"
+                android:background="@color/componentsColor"
+                android:textColor="#fff"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

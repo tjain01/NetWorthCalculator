@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Activity for adding recyclerview row that is linked to AddAssetsClass-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        style="@style/assetLiabilityRowCardVIew"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/assetLiabilityName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/componentsBackground"
+                android:padding="10dp"
+                android:text="Tanisha Jain"
+                android:textAlignment="center"
+                android:textColor="@color/componentsColor"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/assetLiabilityValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/componentsBackground"
+                android:padding="10dp"
+                android:text="Tanisha Jain"
+                android:textAlignment="center"
+                android:textColor="@color/componentsColor"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
